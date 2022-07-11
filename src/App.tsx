@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+import RoutingNavigation from "./RoutingNavigation";
 
 function App() {
   return (
     <div className="App">
-      <GoogleAnalytics />
+      <RoutingNavigation />
     </div>
   );
 }
