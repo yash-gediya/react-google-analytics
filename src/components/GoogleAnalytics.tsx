@@ -6,14 +6,19 @@ import { useLocation } from "react-router-dom";
 const GoogleAnalytics = () => {
   const location = useLocation();
 
-  useEffect(() => {
+  const clickHandle = () => {
     ReactGA.initialize("G-97NGVQTB02");
+  };
+
+  useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location]);
   return (
     <div>
-      GoogleAnalytics <br/>
-      <Link to={"one"}>One</Link><br/>
+      <button onClick={clickHandle}>Google initialize</button>
+      GoogleAnalytics <br />
+      <Link to={"one"}>One</Link>
+      <br />
       <Link to={"two"}>Two</Link>
     </div>
   );
