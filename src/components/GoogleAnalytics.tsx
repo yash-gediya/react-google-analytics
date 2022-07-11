@@ -9,7 +9,7 @@ const GoogleAnalytics = () => {
   useEffect(() => {
     ReactGA.initialize("G-97NGVQTB02");
     ReactGA.send({ hitType: "pageview", page: location.pathname });
-  }, []);
+  }, [location]);
   return (
     <div>
       GoogleAnalytics <br/>
