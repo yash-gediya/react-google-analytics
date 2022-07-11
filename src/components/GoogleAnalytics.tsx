@@ -7,10 +7,10 @@ const GoogleAnalytics = () => {
   const location = useLocation();
 
   const clickHandle = () => {
-  };
-  
-  useEffect(() => {
     ReactGA.initialize("G-97NGVQTB02");
+  };
+
+  useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location]);
   return (
