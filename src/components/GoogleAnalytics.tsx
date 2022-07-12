@@ -6,8 +6,15 @@ import { useLocation } from "react-router-dom";
 const GoogleAnalytics = () => {
   const location = useLocation();
 
-  const clickHandle = () => {
-    ReactGA.initialize("G-97NGVQTB02");
+  // ReactGA.initialize("G-97NGVQTB02");
+  const handleClickEvent = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "buttonClick",
+      category: "Custom Button",
+      action: "click",
+      lable: "Google Analytics Custom Button",
+    });
   };
 
   useEffect(() => {
@@ -15,7 +22,7 @@ const GoogleAnalytics = () => {
   }, [location]);
   return (
     <div>
-      <button onClick={clickHandle}>Google initialize</button>
+      <button onClick={handleClickEvent}>Google initialize</button>
       GoogleAnalytics <br />
       <Link to={"one"}>One</Link>
       <br />
